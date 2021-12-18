@@ -3,7 +3,7 @@
 
 ### Nuget ile Kurulum
 
-`$ npm install devmail`
+...
 
 ### Yapılandırma
 
