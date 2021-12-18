@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DevMail.Infrastructre.Models
+﻿
+namespace DevMail.Infrastructure.Models
 {
     public class SendResult
     {

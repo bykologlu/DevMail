@@ -1,11 +1,8 @@
-﻿using DevMail.Infrastructre.Consts;
+﻿using DevMail.Infrastructure.Consts;
 using DevMail.Services;
-using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 
-namespace DevMail.Infrastructre.Helpers
+namespace DevMail.Infrastructure.Helpers
 {
     public static class FileHelper
     {

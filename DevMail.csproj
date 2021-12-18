@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Infrastructre\Templates\EmailConfirmation.html">
+    <EmbeddedResource Include="Infrastructure\Templates\EmailConfirmation.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

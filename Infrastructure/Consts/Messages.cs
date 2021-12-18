@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DevMail.Infrastructre.Consts
+﻿namespace DevMail.Infrastructure.Consts
 {
     public static class Messages
     {

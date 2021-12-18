@@ -1,14 +1,10 @@
-﻿using DevMail.Infrastructre.Consts;
-using DevMail.Infrastructre.Models;
+﻿using DevMail.Infrastructure.Consts;
+using DevMail.Infrastructure.Models;
 using MailKit.Net.Smtp;
 using MailKit.Security;
 using Microsoft.Extensions.Options;
 using MimeKit;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DevMail.Services

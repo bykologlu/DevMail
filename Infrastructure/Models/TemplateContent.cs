@@ -1,7 +1,8 @@
-﻿using DevMail.Infrastructre.Consts;
-using DevMail.Infrastructre.Helpers;
+﻿
+using DevMail.Infrastructure.Consts;
+using DevMail.Infrastructure.Helpers;
 
-namespace DevMail.Infrastructre.Models
+namespace DevMail.Infrastructure.Models
 {
     public class TemplateContent : IMailContent
     {

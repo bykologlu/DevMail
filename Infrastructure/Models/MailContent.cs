@@ -1,9 +1,6 @@
-﻿using DevMail.Infrastructre.Consts;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DevMail.Infrastructure.Consts;
 
-namespace DevMail.Infrastructre.Models
+namespace DevMail.Infrastructure.Models
 {
 
     public class MailContent : IMailContent

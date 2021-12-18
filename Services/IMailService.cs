@@ -1,7 +1,4 @@
-﻿using DevMail.Infrastructre.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DevMail.Infrastructure.Models;
 using System.Threading.Tasks;
 
 namespace DevMail.Services
