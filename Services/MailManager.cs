@@ -83,7 +83,10 @@ namespace DevMail.Services
                                              .Replace("{company_logo}", templateContent.Logo)
                                              .Replace("{validation_link}", templateContent.ValidationLink)
                                              .Replace("{validation_code}", templateContent.ValidationCode)
-                                             .Replace("{message}", templateContent.Message);
+                                             .Replace("{message}", templateContent.Message)
+                                             .Replace("{action_url}", templateContent.ActionUrl)
+                                             .Replace("{company_web}", templateContent.CompanyWeb)
+                                             .Replace("{receiver_name}", templateContent.ReceiverName);
 
             return customizedContent;
         }

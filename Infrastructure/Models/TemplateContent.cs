@@ -30,6 +30,9 @@ namespace DevMail.Infrastructure.Models
         public string ValidationCode { get; set; }
         public string ValidationLink { get; set; }
         public string ReceiverName { get; set; }
+        public string ActionUrl { get; set; }
+
+        public string CompanyWeb { get; set; }
         public TemplateContent AddCompanyName(string companyName)
         {
             Companyname = companyName;
@@ -63,6 +66,18 @@ namespace DevMail.Infrastructure.Models
         public TemplateContent AddReceiverName(string receiverName)
         {
             ReceiverName = receiverName;
+            return this;
+        }
+
+        public TemplateContent AddActionUrl(string actionUrl)
+        {
+            ActionUrl = actionUrl;
+            return this;
+        }
+
+        public TemplateContent AddCompanyWeb(string companyWeb)
+        {
+            CompanyWeb = companyWeb;
             return this;
         }
 

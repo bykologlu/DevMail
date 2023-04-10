@@ -4,6 +4,7 @@
     {
         EmailConfirmation = 1,
         PasswordReset = 2,
-        Wellcome = 3
+        Wellcome = 3,
+        PasswordGenerate = 4
     }
 }
