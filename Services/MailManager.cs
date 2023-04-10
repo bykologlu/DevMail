@@ -11,38 +11,46 @@ namespace DevMail.Services
 {
     public class MailManager : IMailService
     {
-        private readonly MailSetting _mailSettings;
+        private MailSetting _mailSettings;
 
         public MailManager(IOptions<MailSetting> mailSettings)
         {
-            _mailSettings = mailSettings.Value;
+            _mailSettings = mailSettings?.Value;
         }
 
-        public async Task<SendResult> SendEmailAsync(NewMail createMailModel)
+        public async Task<SendResult> SendEmailAsync(MailSetting mailSettings, NewMail newMail)
         {
+            _mailSettings = _mailSettings ?? mailSettings;
+
+            return await SendEmailAsync(newMail);
+        }
+        public async Task<SendResult> SendEmailAsync(NewMail newMail)
+        {
+            if (_mailSettings == null) throw new Exception("Email hesabı yapılandırılmamış.");
+
             try
             {
                 MimeMessage email = new MimeMessage();
                 BodyBuilder bodyBuilder = new BodyBuilder();
 
                 email.Sender = MailboxAddress.Parse(_mailSettings.SenderMailAddress);
-                email.Subject = createMailModel.Subject;
+                email.Subject = newMail.Subject;
 
-                foreach (string receiver in createMailModel.ReceiverMailAddresses)
+                foreach (string receiver in newMail.ReceiverMailAddresses)
                     email.To.Add(MailboxAddress.Parse(receiver));
 
-                if (createMailModel.AttachedFiles != null)
-                    foreach (string file in createMailModel.AttachedFiles)
+                if (newMail.AttachedFiles != null)
+                    foreach (string file in newMail.AttachedFiles)
                         bodyBuilder.Attachments.Add(file);
 
-                if (createMailModel.Content.IsTemplate)
+                if (newMail.Content.IsTemplate)
                 {
-                    TemplateContent templateContent = (TemplateContent)createMailModel.Content;
+                    TemplateContent templateContent = (TemplateContent)newMail.Content;
                     string customizedContent = CustomizeTemplateContent(templateContent);
-                    createMailModel.Content = new MailContent(customizedContent);
+                    newMail.Content = new MailContent(customizedContent);
                 }
 
-                bodyBuilder.HtmlBody = createMailModel.Content.Message;
+                bodyBuilder.HtmlBody = newMail.Content.Message;
                 email.Body = bodyBuilder.ToMessageBody();
 
                 using (var smtp = new SmtpClient())
