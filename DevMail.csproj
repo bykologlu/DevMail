@@ -5,15 +5,15 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>DevCode</Company>
     <RepositoryUrl>https://github.com/bykologlu/DevMail</RepositoryUrl>
-    <Version>1.0.1</Version>
-    <AssemblyVersion>1.0.1</AssemblyVersion>
-    <FileVersion>1.0.1</FileVersion>    
+    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.2</AssemblyVersion>
+    <FileVersion>1.0.2</FileVersion>    
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Infrastructure\Templates\EmailConfirmation.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <Content Include="Infrastructure\Templates\EmailConfirmation.html">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
