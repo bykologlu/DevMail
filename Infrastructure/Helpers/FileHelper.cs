@@ -23,7 +23,7 @@ namespace DevMail.Infrastructure.Helpers
         {
             string fileContent;
 
-            Stream templateStream = typeof(MailManager).Assembly.GetManifestResourceStream($"DevMail.Infrastructre.Templates.{template}.html");
+            Stream templateStream = typeof(MailManager).Assembly.GetManifestResourceStream($"DevMail.Infrastructure.Templates.{template}.html");
 
             using (StreamReader reader = new StreamReader(templateStream))
             {

@@ -11,9 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Infrastructure\Templates\EmailConfirmation.html">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
+    <None Remove="Infrastructure\Templates\PasswordGenerate.html" />
+    <None Remove="nuget.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Infrastructure\Templates\EmailConfirmation.html" />
+    <EmbeddedResource Include="Infrastructure\Templates\PasswordGenerate.html" />
   </ItemGroup>
 
   <ItemGroup>
