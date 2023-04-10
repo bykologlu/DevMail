@@ -15,7 +15,13 @@ namespace DevMail.Services
 
         public MailManager(IOptions<MailSetting> mailSettings)
         {
-            _mailSettings = mailSettings?.Value;
+            if(mailSettings?.Value?.Host != null &&
+               mailSettings?.Value?.SenderMailAddress != null &&
+               mailSettings?.Value?.Password != null &&
+               mailSettings?.Value?.Port != 0)
+                _mailSettings = mailSettings?.Value;
+            else
+                _mailSettings = null;
         }
 
         public async Task<SendResult> SendEmailAsync(MailSetting mailSettings, NewMail newMail)
